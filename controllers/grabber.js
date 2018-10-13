@@ -38,6 +38,7 @@ const scrape = async () => {
   }
   try {
     while (await page.$('div.pagination__arrow._right') !== null) {
+      await page.waitForSelector('.miniCard');
       for (let step = 0; step < 12; step++) {
         const action = await page.evaluate(() => {
           const anchors = document.getElementsByClassName('miniCard');
@@ -45,7 +46,19 @@ const scrape = async () => {
         });
         await page.click(`#${action[step]} > div`);
         await console.log(`clicked on: #${action[step]} > div`);
-        await page.waitForSelector('div.contact__phonesFadeShow');
+        // await page.waitForSelector('div.contact__phonesFadeShow');
+        try {
+          await page.waitForSelector('div.contact__phonesFadeShow');
+        } catch (e) {
+          await page.waitForSelector('span.mediaContacts__showPhones');
+          await console.log('Exception caught: Using fallback selector: span.mediaContacts__showPhones');
+          await page.click('span.mediaContacts__showPhones');
+          await console.log('clicked on: span.mediaContacts__showPhones');
+          const numberAlt = await page.evaluate(() => document.querySelector('a.mediaContacts__phonesNumber').innerText);
+          items.push(numberAlt);
+          await page.click('a.link.frame__controlsButton._back._undashed');
+        }
+        await page.waitFor(1000);
         await page.click('div.contact__phonesFadeShow');
         const number = await page.evaluate(() => document.querySelector('div.contact__phonesVisible').innerText);
         items.push(number.replace(/(\r\n\t|\n|\r\t)/gm, ' ', ' ').split('Пожалуйста, скажите, что узнали номер в 2ГИС').join(''));
@@ -59,6 +72,7 @@ const scrape = async () => {
   } catch (exception) {
     console.log(`EXCEPTION CAUGHT: ${exception}`);
   }
+  // await browser.close();
   return { selectorID: items };
 };
 scrape().then((value) => {
