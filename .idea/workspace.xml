@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a045f5ff-638d-4974-99ea-7892af85900a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/grabber.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/phonebase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routers/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +18,7 @@
     <session id="-610799842">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="26" />
+          <entry key="project.closed" value="30" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.134" value="1" />
           <entry key="project.open.time.31" value="1" />
@@ -42,17 +37,19 @@
           <entry key="project.open.time.59" value="2" />
           <entry key="project.open.time.60" value="1" />
           <entry key="project.open.time.61" value="1" />
-          <entry key="project.open.time.62" value="3" />
+          <entry key="project.open.time.62" value="5" />
           <entry key="project.open.time.65" value="1" />
           <entry key="project.open.time.72" value="1" />
+          <entry key="project.open.time.76" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="32" />
+          <entry key="project.open.time.93" value="1" />
+          <entry key="project.opened" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="env" value="2" />
-          <entry key="js" value="40" />
+          <entry key="js" value="41" />
           <entry key="json" value="3" />
           <entry key="vmoptions" value="1" />
         </counts>
@@ -61,27 +58,27 @@
         <counts>
           <entry key=".env file" value="1" />
           <entry key="JSON" value="3" />
-          <entry key="JavaScript" value="38" />
+          <entry key="JavaScript" value="39" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="UML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="32" />
+          <entry key="ESLintLanguageService" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="1" />
-          <entry key="js" value="10935" />
-          <entry key="json" value="8" />
+          <entry key="js" value="11713" />
+          <entry key="json" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="10935" />
+          <entry key="JSON" value="16" />
+          <entry key="JavaScript" value="11713" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -114,8 +111,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="38" column="91" lean-forward="true" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
+            <state relative-caret-position="289">
+              <caret line="42" column="62" lean-forward="true" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -123,8 +129,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1242">
-              <caret line="54" column="22" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="26" />
+            <state relative-caret-position="253">
+              <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+              <folding>
+                <element signature="n#!!block;n#scripts#0;n#!!top" />
+                <element signature="n#!!block;n#dependencies#0;n#!!top" />
+                <element signature="n#!!block;n#devDependencies#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,8 +185,8 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/models/phonebase.js" />
         <option value="$PROJECT_DIR$/models/users.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$APPLICATION_CONFIG_DIR$/webstorm64.vmoptions" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/controllers/grabber.js" />
       </list>
     </option>
@@ -258,7 +269,7 @@
     <property name="node.js.selected.package.standard" value="$PROJECT_DIR$/node_modules/eslint" />
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.linuxbrew/bin/node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -321,12 +332,16 @@
       <workItem from="1538720160797" duration="4216000" />
       <workItem from="1538985479034" duration="610000" />
       <workItem from="1539019775259" duration="598000" />
-      <workItem from="1539066474835" duration="1996000" />
+      <workItem from="1539066474835" duration="2665000" />
+      <workItem from="1539103781742" duration="4281000" />
+      <workItem from="1539239769799" duration="19066000" />
+      <workItem from="1539325712098" duration="10029000" />
+      <workItem from="1539430728799" duration="5094000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168171000" />
+    <option name="totallyTimeSpent" value="207310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -339,6 +354,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="50" y="-11" width="1871" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14463705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -352,7 +368,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914045" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49945828" visible="true" weight="0.29874215" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49945828" visible="true" weight="0.360587" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005417" side_tool="true" weight="0.4140461" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -503,9 +519,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/webstorm64.vmoptions">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -530,10 +543,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="54" column="22" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="26" />
+        <state relative-caret-position="253">
+          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+          <folding>
+            <element signature="n#!!block;n#scripts#0;n#!!top" />
+            <element signature="n#!!block;n#dependencies#0;n#!!top" />
+            <element signature="n#!!block;n#devDependencies#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -560,8 +585,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="91" lean-forward="true" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
+        <state relative-caret-position="289">
+          <caret line="42" column="62" lean-forward="true" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
         </state>
       </provider>
     </entry>
