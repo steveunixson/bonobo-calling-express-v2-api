@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a045f5ff-638d-4974-99ea-7892af85900a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,6 +48,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="env" value="2" />
+          <entry key="gitignore" value="2" />
           <entry key="js" value="41" />
           <entry key="json" value="3" />
           <entry key="vmoptions" value="1" />
@@ -59,7 +59,7 @@
           <entry key=".env file" value="1" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="39" />
-          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="UML" value="2" />
         </counts>
       </usages-collector>
@@ -71,15 +71,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="1" />
-          <entry key="js" value="11713" />
+          <entry key="gitignore" value="6" />
+          <entry key="js" value="11990" />
           <entry key="json" value="16" />
+          <entry key="txt" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="11713" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="JavaScript" value="11990" />
+          <entry key="PLAIN_TEXT" value="71" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -108,11 +110,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="42" column="62" lean-forward="true" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+            <state relative-caret-position="151">
+              <caret line="42" column="70" lean-forward="true" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -188,6 +199,7 @@
         <option value="$APPLICATION_CONFIG_DIR$/webstorm64.vmoptions" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/controllers/grabber.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -336,12 +348,27 @@
       <workItem from="1539103781742" duration="4281000" />
       <workItem from="1539239769799" duration="19066000" />
       <workItem from="1539325712098" duration="10029000" />
-      <workItem from="1539430728799" duration="5094000" />
+      <workItem from="1539430728799" duration="8120000" />
     </task>
+    <task id="LOCAL-00001" summary="added while loop and warped it in try/catch">
+      <created>1539440323557</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1539440323557</updated>
+    </task>
+    <task id="LOCAL-00002" summary="excluded .idea folder">
+      <created>1539440429081</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1539440429081</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207310000" />
+    <option name="totallyTimeSpent" value="210336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -380,6 +407,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added while loop and warped it in try/catch" />
+    <MESSAGE value="excluded .idea folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="excluded .idea folder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -585,8 +617,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="42" column="62" lean-forward="true" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+        <state relative-caret-position="151">
+          <caret line="42" column="70" lean-forward="true" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
