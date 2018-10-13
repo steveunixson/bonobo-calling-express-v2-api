@@ -25,16 +25,17 @@ const scrape = async () => {
   await page.waitFor(5000);
   const items = [];
 
-  function delay(ms) {
-    return new Promise((resolve) => {
-      setTimeout(resolve, ms);
-    });
-  }
+  // function delay(ms) {
+  //   return new Promise((resolve) => {
+  //     setTimeout(resolve, ms);
+  //   });
+  // }
   // document.getElementsByClassName('miniCard')[2]
   // document.getElementsByClassName('miniCard')[3].attributes.id.nodeValue
-  await page.waitForSelector('div.pagination__arrow._right');
-  if (await page.$('div.pagination__arrow._right') === null || undefined) {
-    console.log('EXCEPTION CAUGHT: No visible element div.pagination__arrow._right');
+  try {
+    await page.waitForSelector('div.pagination__arrow._right');
+  } catch (exception) {
+    console.log(`EXCEPTION CAUGHT: ${exception}`);
   }
   try {
     while (await page.$('div.pagination__arrow._right') !== null) {
@@ -46,23 +47,31 @@ const scrape = async () => {
         });
         await page.click(`#${action[step]} > div`);
         await console.log(`clicked on: #${action[step]} > div`);
-        // await page.waitForSelector('div.contact__phonesFadeShow');
         try {
+          // ----------------------------------
           await page.waitForSelector('div.contact__phonesFadeShow');
-        } catch (e) {
-          await page.waitForSelector('span.mediaContacts__showPhones');
-          await console.log('Exception caught: Using fallback selector: span.mediaContacts__showPhones');
-          await page.click('span.mediaContacts__showPhones');
-          await console.log('clicked on: span.mediaContacts__showPhones');
-          const numberAlt = await page.evaluate(() => document.querySelector('a.mediaContacts__phonesNumber').innerText);
+          await page.waitFor(2000);
+          await page.click('div.contact__phonesFadeShow');
+          const number = await page.evaluate(() => document.querySelector('div.contact__phonesVisible').innerText);
+          items.push(number.replace(/(\r\n\t|\n|\r\t)/gm, ' ', ' ').split('Пожалуйста, скажите, что узнали номер в 2ГИС').join(''));
+          await page.waitFor(1000);
+          await page.evaluate(() => document.getElementsByClassName('link frame__controlsButton _close _undashed')[0].click());
+          // ----------------------------------
+        } catch (exception) {
+          // ----------------------------------
+          await console.log(`Exception caught: ${exception}: Using fallback selector: span.mediaContacts__showPhones`);
+          await page.evaluate(() => document.getElementsByClassName('mediaContacts__showPhones')[0].click());
+          await console.log('clicked on: mediaContacts__showPhones');
+          await page.waitFor(3000);
+          const numberAlt = await page.evaluate(() => {
+            const anchors = document.getElementsByClassName('mediaContacts__phonesItemCut');
+            return [].map.call(anchors, a => a.innerText);
+          });
+          await console.debug('DEBUG');
           items.push(numberAlt);
-          await page.click('a.link.frame__controlsButton._back._undashed');
+          await page.evaluate(() => document.getElementsByClassName('link frame__controlsButton _close _undashed')[0].click());
+          // ---------------------------------
         }
-        await page.waitFor(1000);
-        await page.click('div.contact__phonesFadeShow');
-        const number = await page.evaluate(() => document.querySelector('div.contact__phonesVisible').innerText);
-        items.push(number.replace(/(\r\n\t|\n|\r\t)/gm, ' ', ' ').split('Пожалуйста, скажите, что узнали номер в 2ГИС').join(''));
-        delay(5000);
       }
       await page.waitForSelector('div.pagination__arrow._right');
       await page.focus('div.pagination__arrow._right');

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a045f5ff-638d-4974-99ea-7892af85900a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/grabber.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/grabber.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -72,16 +73,16 @@
         <counts>
           <entry key="env" value="1" />
           <entry key="gitignore" value="6" />
-          <entry key="js" value="11990" />
+          <entry key="js" value="12954" />
           <entry key="json" value="16" />
-          <entry key="txt" value="64" />
+          <entry key="txt" value="91" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="11990" />
-          <entry key="PLAIN_TEXT" value="71" />
+          <entry key="JavaScript" value="12954" />
+          <entry key="PLAIN_TEXT" value="98" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -110,16 +111,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="42" column="70" lean-forward="true" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="67" />
+            <state relative-caret-position="124">
+              <caret line="34" column="61" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
@@ -180,6 +181,11 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>div.contact__phonesFadeShow</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -198,8 +204,8 @@
         <option value="$PROJECT_DIR$/models/users.js" />
         <option value="$APPLICATION_CONFIG_DIR$/webstorm64.vmoptions" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/controllers/grabber.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/controllers/grabber.js" />
       </list>
     </option>
   </component>
@@ -218,10 +224,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="237" />
-    <option name="y" value="152" />
+    <option name="x" value="1979" />
+    <option name="y" value="-4" />
     <option name="width" value="1869" />
-    <option name="height" value="1049" />
+    <option name="height" value="1042" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -348,7 +354,7 @@
       <workItem from="1539103781742" duration="4281000" />
       <workItem from="1539239769799" duration="19066000" />
       <workItem from="1539325712098" duration="10029000" />
-      <workItem from="1539430728799" duration="8120000" />
+      <workItem from="1539430728799" duration="30017000" />
     </task>
     <task id="LOCAL-00001" summary="added while loop and warped it in try/catch">
       <created>1539440323557</created>
@@ -364,11 +370,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539440429081</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added condition for near by company">
+      <created>1539446049498</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1539446049498</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210336000" />
+    <option name="totallyTimeSpent" value="232233000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -380,10 +393,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="-11" width="1871" height="1092" extended-state="6" />
+    <frame x="1919" y="-4" width="1282" height="1029" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14463705" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2124105" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -395,7 +408,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914045" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49945828" visible="true" weight="0.360587" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49945828" visible="true" weight="0.3830735" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005417" side_tool="true" weight="0.4140461" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -411,7 +424,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added while loop and warped it in try/catch" />
     <MESSAGE value="excluded .idea folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="excluded .idea folder" />
+    <MESSAGE value="added condition for near by company" />
+    <option name="LAST_COMMIT_MESSAGE" value="added condition for near by company" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -615,17 +629,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="42" column="70" lean-forward="true" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="34" column="61" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="61" />
         </state>
       </provider>
     </entry>
