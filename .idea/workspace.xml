@@ -18,7 +18,7 @@
     <session id="-610799842">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="30" />
+          <entry key="project.closed" value="31" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.134" value="1" />
           <entry key="project.open.time.31" value="1" />
@@ -31,7 +31,7 @@
           <entry key="project.open.time.50" value="3" />
           <entry key="project.open.time.51" value="3" />
           <entry key="project.open.time.52" value="1" />
-          <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.53" value="2" />
           <entry key="project.open.time.55" value="1" />
           <entry key="project.open.time.58" value="1" />
           <entry key="project.open.time.59" value="2" />
@@ -43,7 +43,7 @@
           <entry key="project.open.time.76" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.93" value="1" />
-          <entry key="project.opened" value="36" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -66,23 +66,23 @@
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="36" />
+          <entry key="ESLintLanguageService" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="1" />
           <entry key="gitignore" value="6" />
-          <entry key="js" value="12954" />
+          <entry key="js" value="14029" />
           <entry key="json" value="16" />
-          <entry key="txt" value="91" />
+          <entry key="txt" value="97" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="12954" />
-          <entry key="PLAIN_TEXT" value="98" />
+          <entry key="JavaScript" value="14029" />
+          <entry key="PLAIN_TEXT" value="104" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -114,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="34" column="61" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="61" />
+            <state relative-caret-position="82">
+              <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -124,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -224,16 +224,17 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1979" />
+    <option name="x" value="-51" />
     <option name="y" value="-4" />
     <option name="width" value="1869" />
-    <option name="height" value="1042" />
+    <option name="height" value="1035" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -270,7 +271,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,7 +354,8 @@
       <workItem from="1539103781742" duration="4281000" />
       <workItem from="1539239769799" duration="19066000" />
       <workItem from="1539325712098" duration="10029000" />
-      <workItem from="1539430728799" duration="30017000" />
+      <workItem from="1539430728799" duration="43900000" />
+      <workItem from="1539511950575" duration="16665000" />
     </task>
     <task id="LOCAL-00001" summary="added while loop and warped it in try/catch">
       <created>1539440323557</created>
@@ -377,11 +378,18 @@
       <option name="project" value="LOCAL" />
       <updated>1539446049498</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixing condition for near by company">
+      <created>1539465753006</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1539465753006</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232233000" />
+    <option name="totallyTimeSpent" value="262781000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -393,10 +401,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1919" y="-4" width="1282" height="1029" extended-state="6" />
-    <editor active="true" />
+    <frame x="50" y="-4" width="1871" height="1085" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2124105" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14463705" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -408,7 +415,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914045" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49945828" visible="true" weight="0.3830735" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49945828" visible="true" weight="0.360587" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005417" side_tool="true" weight="0.4140461" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -425,7 +432,8 @@
     <MESSAGE value="added while loop and warped it in try/catch" />
     <MESSAGE value="excluded .idea folder" />
     <MESSAGE value="added condition for near by company" />
-    <option name="LAST_COMMIT_MESSAGE" value="added condition for near by company" />
+    <MESSAGE value="fixing condition for near by company" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing condition for near by company" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -589,6 +597,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.eslintrc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -629,17 +644,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="5" lean-forward="true" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/grabber.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="34" column="61" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="61" />
+        <state relative-caret-position="82">
+          <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
         </state>
       </provider>
     </entry>
