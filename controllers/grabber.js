@@ -14,7 +14,7 @@ const scrape = async () => {
       `--window-size=${width},${height}`,
     ],
   });
-  const timeout = 5 * 30000;
+  const timeout = 4 * 30000;
   const page = await browser.newPage();
   await page.setViewport({ width, height });
   await page.setDefaultNavigationTimeout(timeout);
@@ -45,19 +45,28 @@ const scrape = async () => {
         try {
           await pageNew.waitFor(1000);
           await pageNew.waitForSelector('div.card__scrollerIn');
+          await pageNew.waitForSelector('h1.cardHeader__headerNameText');
+          await pageNew.waitForSelector('address.card__address');
           await pageNew.evaluate(() => document.getElementsByClassName('contact__toggle _place_phones')[0].click());
           const number = await pageNew.evaluate(() => document.getElementsByClassName('contact__phones _shown')[0].innerText);
-          items.push(number.replace(/(\r\n\t|\n|\r\t)/gm, ' ', ' ').split('Пожалуйста, скажите, что узнали номер в 2ГИС').join(''));
+          const phone = number.replace(/(\r\n\t|\n|\r\t)/gm, ' ', ' ').split('Пожалуйста, скажите, что узнали номер в 2ГИС').join('');
+          const name = await pageNew.evaluate(() => document.querySelector('h1.cardHeader__headerNameText').innerText);
+          const Address = await pageNew.evaluate(() => document.querySelector('address.card__address').innerText);
+          items.push({
+            phoneNumber: phone,
+            companyName: name,
+            address: Address,
+          });
           await pageNew.close();
         } catch (e) {
           await console.log(`Exception caught: ${e}`);
           await pageNew.close();
         }
-        await console.log(`clicked on ${step + 1}`);
       }
       await page.waitForSelector('div.pagination__arrow._right');
       await page.focus('div.pagination__arrow._right');
       await page.click('div.pagination__arrow._right');
+      await console.log('clicked on next page');
     }
   } catch (exception) {
     console.log(`EXCEPTION CAUGHT: ${exception}`);
@@ -66,7 +75,7 @@ const scrape = async () => {
   return items;
 };
 scrape().then((value) => {
-  value.items.forEach(item => console.log(item.toString()));
+  console.log(value);
 }).catch((exception) => {
   console.log(`EXCEPTION CAUGHT: ${exception}`);
 });
