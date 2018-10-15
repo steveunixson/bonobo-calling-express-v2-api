@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const fs = require('fs');
+const os = require('os');
 
 const baseURL = 'https://2gis.ru/rostov';
 const search = 'Парикмахерская';
@@ -9,7 +11,7 @@ const height = 1050;
 
 const scrape = async () => {
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     args: [
       `--window-size=${width},${height}`,
     ],
@@ -75,7 +77,21 @@ const scrape = async () => {
   return items;
 };
 scrape().then((value) => {
-  console.log(value);
+  const content = JSON.stringify(value);
+  const homeDir = os.homedir();
+  const milliseconds = new Date().getTime();
+
+  try {
+    fs.writeFile(`${homeDir}/${search}_${milliseconds}.json`, content, 'utf8', (err) => {
+      if (err) {
+        return console.log(err);
+      }
+      console.log('The JSON file was saved!');
+      return 0;
+    });
+  } catch (e) {
+    console.log(`EXCEPTION CAUGHT: ${e}`);
+  }
 }).catch((exception) => {
   console.log(`EXCEPTION CAUGHT: ${exception}`);
 });
