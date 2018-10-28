@@ -6,6 +6,9 @@ const config = require('../config/config');
 const controller = require('../controllers/auth');
 const org = require('../controllers/org');
 
+/**
+ * @return {boolean}
+ */
 function BasicAuthorizer(username, password) {
   return username === process.env.ROOTUSER && password === process.env.ROOTPWD;
 }

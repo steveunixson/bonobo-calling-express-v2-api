@@ -14,8 +14,6 @@ const express = require('@feathersjs/express');
 const swaggerUi = require('swagger-ui-express');
 const morgan = require('morgan');
 const basicAuth = require('express-basic-auth');
-// const bodyParser = require('body-parser');
-// const methodOverride = require('method-override');
 const swaggerDocument = require('./api/swagger.json');
 const log = require('./utils/log')(module);
 const config = require('./config/config');
@@ -28,17 +26,7 @@ const baseUrl = config.url;
 
 
 const app = express();
-// app.use(methodOverride('x-api-key', 'DELETE'));
 
-// app.use((req, res, next) => {
-//   // IE9 doesn't set headers for cross-domain ajax requests
-//   if (typeof (req.headers['content-type']) === 'undefined') {
-//     req.headers['content-type'] = 'application/json; charset=UTF-8';
-//   }
-//   next();
-// });
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(compress());
 app.use(express.json());
