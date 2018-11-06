@@ -1,0 +1,49 @@
+body{
+    background: #e55252;
+    color: black;
+    font-family: Kalapi;
+    font-weight: bolder;
+}
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.company{
+    background: black;
+    color: #e55252;
+    border-radius-: 10px;
+    border-width: 2px;
+}
+.script{
+    width: 100%;
+    height: 100%;
+    border-radius-: 10px;
+    border-width: 0px;
+    border-color: #e55252;
+}
+.sz{
+    height: 650px
+}
+.on{
+    font-size: 40px;
+    color: black;
+}
+.of{
+    width: 160px;
+    height: 60px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: black;
+}
+.black{
+    background: black;
+    color: #e55252;
+    height: 60px;
+    width: 320px;
+    font-size: 32px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: black;
+}
