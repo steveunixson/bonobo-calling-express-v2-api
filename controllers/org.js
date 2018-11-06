@@ -10,15 +10,8 @@ function genUUID() {
 
 function createOrg(req, res) {
   const org = { organization: req.body.organization, domain: req.body.domain };
-  if (!org.domain) {
+  if (!req.body || !org.domain || !org.organization) {
     return res.status(400).json({ error: 1, msg: 'Bad Request: Domain should be specified!' });
-  }
-  if (!org.organization) {
-    return res.status(400).json({ error: 1, msg: 'Bad Request: Organization should be specified!' });
-  }
-
-  if (!req.body) {
-    return res.status(400).json({ error: 1, msg: 'Bad Request' });
   }
   Organization.findOne(org, (err, result) => {
     if (result != null) {

@@ -1,21 +1,20 @@
-const xlsxj = require('xlsx-to-json');
-const JSONStream = require('JSONStream');
-const fs = require('fs');
-const path = require('path');
-const SaveToMongo = require('save-to-mongo');
-const os = require('os');
+/* eslint-disable max-len,prefer-destructuring */
+const csv = require('csvtojson');
 const mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
 const Match = require('../models/phonebase');
 const log = require('../utils/log')(module);
 const config = require('../config/mongodb');
 
 function postUpload(req, res) {
-  if (!req.body || !req.files.xlsx || !req.body.name || !req.body.type || !req.body.comment || !req.headers['x-api-key']) {
-    return res.status(400).json({ error: 1, msg: 'Bad Request' });
+  if (!req.files.xlsx || !req.body.name || !req.body.type || !req.body.comment || !req.headers['x-api-key']) {
+    const debugBody = req.body;
+    return res.status(400).json({ error: 1, msg: 'Bad Request', debug: { debugBody } });
   }
-  const xlsxFile = req.files.xlsx.path;
-  const jsonfile = `${os.tmpdir()}/${req.body.name}.json`;
+  const Name = req.body.name.replace(/\s/g, '');
+  const csvFilePath = req.files.xlsx.path;
   const apiKey = { key: req.headers['x-api-key'] };
   const match = new Match({
     name: req.body.name,
@@ -23,39 +22,28 @@ function postUpload(req, res) {
     comment: req.body.comment,
     apikey: apiKey.key,
   });
-  const saveToMongo = SaveToMongo({
-    uri: config.database,
-    collection: req.body.name,
-    bulk: {
-      mode: 'unordered',
-    },
-  });
-  match.save((err, result) => {
-    if (err) {
-      log.error(`Error: ${err}`);
-      return res.status(500).json({ error: 1, msg: 'Internal Error' });
-    }
-    return res.status(200).json({ error: 0, msg: { match: result } });
-  });
-  xlsxj({
-    input: xlsxFile,
-    output: jsonfile,
-  }, (err) => {
-    if (err) {
+  const SaveDB = async () => {
+    const URI = config.database.toString();
+    const matchStatus = await match.save((err, result) => result);
+    const jsonArray = await csv().fromFile(csvFilePath);
+    await MongoClient.connect(URI, { useNewUrlParser: true }, (err, client) => {
+      assert.equal(null, err);
+      log.info('Connected to DB!');
+      const db = client.db(config.name);
+      const collection = db.collection(Name);
+      collection.insertMany(jsonArray, (exception, result) => result);
+      log.info('INSERTED');
+    });
+    return { matchStatus, jsonArray };
+  };
+  SaveDB()
+    .then((result) => {
+      res.status(200).json({ error: 0, msg: `Data uploaded to collection: ${Name}`, status: result.matchStatus });
+    })
+    .catch((err) => {
       log.error(err);
-    } else {
-      log.debug('Created json file!');
-      fs.createReadStream(path.join(jsonfile))
-        .pipe(JSONStream.parse('*'))
-        .pipe(saveToMongo)
-        .on('execute-error', (errorSave) => {
-          log.error(errorSave);
-        })
-        .on('done', () => {
-          log.info('Data uploaded to DB!!!');
-        });
-    }
-  });
+      res.status(500).json({ error: 1, msg: `Internal Error ${err}` });
+    });
   return 0;
 }
 
@@ -68,21 +56,21 @@ function getUpload(req, res) {
   });
 }
 
-function find(name, query, cb) {
-  mongoose.connection.db.collection(name, (err, collection) => {
-    collection.find(query).toArray(cb);
-  });
-}
-
 function getPhone(req, res) {
   if (!req.body.base) return res.status(400).send('No base was specified.');
 
-  find(req.body.base, { _id: req.body.id }, (err, docs) => {
+  function find(name, query, cb) {
+    mongoose.connection.db.collection(name, (err, collection) => {
+      collection.find(query).toArray(cb);
+    });
+  }
+
+  find(req.body.base.replace(/\s/g, ''), { id: req.body.id }, (err, docs) => {
     if (err) {
       return res.status(404).json({ err: 1, msg: 'Not Found' });
     }
 
-    return res.status(200).json({ err: 0, msg: docs });
+    return res.status(200).json({ err: 0, msg: docs[0] });
   });
   return 0;
 }
@@ -92,11 +80,14 @@ function activity(req, res) {
   const type = { type: req.body.type };
   const key = req.headers['x-api-key'];
 
-  try {
-    Match.findOneAndUpdate({ name, apikey: key }, { $set: { type } }, () => res.status(200).json({ err: 0, msg: 'Updated' }));
-  } catch (error) {
-    return res.status(500).json({ err: 1, msg: 'Internal Error' });
-  }
+  const update = async () => {
+    await Match.findOneAndUpdate({ name, apikey: key }, { $set: { type } }, () => {});
+  };
+  update()
+    .then(() => { res.status(200).json({ err: 0, msg: 'Updated' }); })
+    .catch((exception) => {
+      res.status(500).json({ err: 1, msg: 'Internal Error', exception });
+    });
   return 0;
 }
 
