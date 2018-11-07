@@ -9,12 +9,21 @@ body{
     top: 0;
     left: 0;
     height: 100%;
+    width: 100%;
 }
 .center{
     position: absolute;
     top: 100%;
     left: 0;
     height: 100%;
+    width: 100%;
+}
+.bottom{
+    position: absolute;
+    top: 200%;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 .black{
     background: black;
@@ -42,11 +51,11 @@ body{
     border-radius: 5px;
 }
 .phone{
-    font-size: 28px;
-    color: black;
+   font-family: Arial;
 }
 .phone1{
     font-size: 28px;
+    color: black;
 }
 .good{
     background: #e55252;
@@ -59,4 +68,41 @@ body{
 .bon{
     background: #ffc33d;
     color: black;
+}
+.full{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+.script{
+    width: 100%;
+    height: 100%;
+    border-radius-: 10px;
+    border-width: 0px;
+    border-color: #d2d5d8;
+}
+.company{
+    background: black;
+    color: #d2d5d8;
+    border-radius-: 10px;
+    border-width: 2px;
+}
+.sz{
+    height: 650px
+}
+.on{
+    font-size: 40px;
+    color: black;
+}
+.of{
+    width: 160px;
+    height: 60px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: black;
+}
+.hd{
+    background: black;
+    color: #d2d5d8;
 }
