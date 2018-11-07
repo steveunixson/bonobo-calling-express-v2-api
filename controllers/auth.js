@@ -60,6 +60,30 @@ function setupPostUser(req, res) {
     return res.status(200).json({ error: 0, token: saveResult.token, pwd });
   });
 }
+
+function setupPostManager(req, res) {
+  const key = req.headers['x-api-key'];
+  const Name = { username: req.body.username };
+  const Organization = { org: req.body.organization };
+  const pwd = passwordGen();
+  const role = 'manager';
+  const NewUser = new User({
+    username: Name.username,
+    password: pwd,
+    role: 'user',
+    organization: Organization.org,
+    token: usertokenGen(Name.username, pwd, role),
+    apikey: key,
+  });
+  NewUser.save((error, saveResult) => {
+    if (error) {
+      log.error(error.message);
+      return res.status(403).json({ error: 1, msg: 'User Exists', user: { username: Name.username } });
+    }
+    return res.status(200).json({ error: 0, token: saveResult.token, pwd });
+  });
+}
+
 // Removes user
 function removeUser(req, res) {
   const key = req.headers['x-api-key'];
@@ -138,6 +162,37 @@ function tokenUser(req, res, next) {
   });
   return 0;
 }
+
+// Token extractor
+function tokenManager(req, res, next) {
+  if (!req.headers.authorization) {
+    log.error('UNAUTHORIZED USER HAS BEEN SPOTTED!');
+    return res.status(403).json({ error: 1, msg: 'Unauthorized' });
+  }
+  const token = JSON.stringify(req.headers.authorization).replace('Bearer ', '');
+
+  const decoded = jwtDecode(token);
+  const Name = { name: decoded.name };
+  const Password = { password: decoded.password };
+  User.findOne({ username: Name.name, password: Password.password, role: 'user' }, (err, data) => {
+    if (err) {
+      return res.status(403).json({ error: 1, msg: 'Forbiden' });
+    }
+    if (!data) {
+      log.error(`user ${Name.name} Permission denied`);
+      return res.status(401).json({ error: 1, msg: 'Permission denied' });
+    }
+    if (data.password === Password.password || data.username === Name.username || data.role === 'manager') {
+      log.info(`Acsess granted for: ${data.username}`);
+      next();
+    } else {
+      log.error(`user ${data.username} Permission denied`);
+      return res.status(401).json({ error: 1, msg: 'Permission denied' });
+    }
+    return 0;
+  });
+  return 0;
+}
 // Login mechanism
 function login(req, res) {
   const Password = { password: req.body.password };
@@ -163,6 +218,8 @@ function login(req, res) {
 
 module.exports.setupPost = setupPost; // Creates admin
 module.exports.setupPostUser = setupPostUser; // Creates User
+module.exports.setupPostManager = setupPostManager;
+module.exports.tokenManager = tokenManager;
 module.exports.removeUser = removeUser; // Removes User
 module.exports.tokenAdmin = tokenAdmin; // Admin Token Extractor
 module.exports.tokenUser = tokenUser; // User Token Extractor

@@ -22,6 +22,8 @@ const auth = require('./routers/auth');
 const org = require('./routers/org');
 const upload = require('./routers/upload');
 
+const yandexKey = process.env.YANDEXTELEPHONY;
+
 const homeDir = os.tmpdir();
 const crawlerDir = 'magenta-temp';
 
@@ -70,6 +72,9 @@ function BasicAuthorizer(username, password) {
 
 app.use(auth);
 app.use(upload);
+app.get(`${config.url}/yandex-key`, (req, res) => {
+  res.status(200).json({ err: 0, yandex: yandexKey, baseURL: config.url });
+});
 app.use(express.static(path.join(__dirname, 'public/front')));
 app.use(`${baseUrl}/swagger`, basicAuth({ authorizer: BasicAuthorizer, challenge: true, realm: 'Imb4T3st4pp' }), swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(basicAuth({ authorizer: BasicAuthorizer }), org);

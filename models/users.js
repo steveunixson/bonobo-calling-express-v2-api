@@ -15,6 +15,12 @@ const UserSchema = mongoose.Schema({
     required: true,
     unique: true,
   },
+  yandexID: {
+    type: Number,
+  },
+  email: {
+    type: String,
+  },
   password: {
     type: String,
     // required: true,

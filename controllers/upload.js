@@ -57,8 +57,10 @@ function getUpload(req, res) {
 }
 
 function getPhone(req, res) {
-  if (!req.body.base) return res.status(400).send('No base was specified.');
-
+  if (!req.body.base) {
+    console.log(req.body);
+    return res.status(400).json({ err: 1, msg: 'No base was specified.' });
+  }
   function find(name, query, cb) {
     mongoose.connection.db.collection(name, (err, collection) => {
       collection.find(query).toArray(cb);
